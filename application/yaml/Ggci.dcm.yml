@@ -1,0 +1,33 @@
+Ggci:
+  type: entity
+  table: GGci
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    gKeyword:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: G_keyword
+    gCi:
+      type: text
+      nullable: true
+      column: G_ci
+    gCiok:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: G_ciok
+    gPositionid:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: G_positionID
+  lifecycleCallbacks: {  }

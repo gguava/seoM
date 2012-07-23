@@ -16,7 +16,6 @@ $classLoader->register();
 
 $configFile = getcwd() . '/libraries/Doctrine.php';
 
-$helperSet = null;
 if (file_exists($configFile)) {
     if ( ! is_readable($configFile)) {
         trigger_error(

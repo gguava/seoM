@@ -1,0 +1,29 @@
+Ggkeyword:
+  type: entity
+  table: GGkeyword
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    gPosition:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+      column: G_position
+    gUrl:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+      column: G_URL
+    gFatherid:
+      type: integer
+      unsigned: false
+      nullable: true
+      column: G_fatherID
+  lifecycleCallbacks: {  }

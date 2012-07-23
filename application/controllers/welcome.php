@@ -22,9 +22,13 @@ class Welcome extends CI_Controller {
 		$this->load->library('doctrine');
 		$this->load->library('template');
 		$user = new models\User;
-		$user->setUsername('josephwynn');
-		$user->setPassword('Passw0rd');
+		$user->setUsername('guava');
+		$user->setPassword('guavaguava00');
 		$user->setEmail('wildlyinaccurate@gmail.com');
+		
+		$this->em = $this->doctrine->em;
+		$this->em->persist($user);
+		$this->em->flush();
 		
 		$t=new Template();
 		$t->assign('title','funny?');

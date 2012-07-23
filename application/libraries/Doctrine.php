@@ -1,6 +1,8 @@
 <?php
 use Doctrine\ORM\EntityManager,
 	Doctrine\ORM\Configuration;
+use Doctrine\ORM\Mapping\Driver\YamlDriver;
+
 
 define('DEBUGGING', FALSE);
 
@@ -44,6 +46,11 @@ class Doctrine {
 		// Metadata driver
 		$driverImpl = $config->newDefaultAnnotationDriver(APPPATH . 'models');	
 		$config->setMetadataDriverImpl($driverImpl);
+		
+		//yaml guava
+		// $config instanceof Doctrine\ORM\Configuration
+		$driver = new YamlDriver(array(APPPATH . 'yaml'));
+		$config->setMetadataDriverImpl($driver);
 
 		// Caching
 		$config->setMetadataCacheImpl($cache);

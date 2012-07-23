@@ -1,0 +1,42 @@
+Ggblog:
+  type: entity
+  table: GGblog
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    gblogurl:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: Gblogurl
+    gusername:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: Gusername
+    gpassword:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: Gpassword
+    gblogkey:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: Gblogkey
+    glinkto:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: Glinkto
+  lifecycleCallbacks: {  }

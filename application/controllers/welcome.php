@@ -21,10 +21,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->library('doctrine');
 		$this->load->library('template');
-		$user = new models\User;
-		$user->setUsername('guava');
-		$user->setPassword('guavaguava00');
-		$user->setEmail('wildlyinaccurate@gmail.com');
+		$user = new models\Gguser;
+		$user->setUsername('ss2ss');
+		$user->setPassword('ss2ss');
+		$user->setEmail('ss2sss@gmail.com');
 		
 		$this->em = $this->doctrine->em;
 		$this->em->persist($user);

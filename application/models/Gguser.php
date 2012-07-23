@@ -1,44 +1,44 @@
 <?php
 
-
+namespace models;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Gguser
  *
- * @ORM\Table(name="GGuser")
- * @ORM\Entity
+ * @Table(name="GGuser")
+ * @Entity
  */
 class Gguser
 {
     /**
      * @var integer $id
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string $username
      *
-     * @ORM\Column(name="username", type="string", length=32, nullable=false)
+     * @Column(name="username", type="string", length=32, nullable=false)
      */
     private $username;
 
     /**
      * @var string $password
      *
-     * @ORM\Column(name="password", type="string", length=64, nullable=false)
+     * @Column(name="password", type="string", length=64, nullable=false)
      */
     private $password;
 
     /**
      * @var string $email
      *
-     * @ORM\Column(name="email", type="string", length=255, nullable=false)
+     * @Column(name="email", type="string", length=255, nullable=false)
      */
     private $email;
 

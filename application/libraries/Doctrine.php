@@ -49,8 +49,8 @@ class Doctrine {
 		
 		//yaml guava
 		// $config instanceof Doctrine\ORM\Configuration
-		$driver = new YamlDriver(array(APPPATH . 'yaml'));
-		$config->setMetadataDriverImpl($driver);
+		//$driver = new YamlDriver(array(APPPATH . 'yaml'));
+		//$config->setMetadataDriverImpl($driver);
 
 		// Caching
 		$config->setMetadataCacheImpl($cache);

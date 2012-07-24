@@ -1,0 +1,124 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$title}</title>
+	<style type="text/css">
+
+		::selection{ background-color: #E13300; color: white; }
+		::moz-selection{ background-color: #E13300; color: white; }
+		::webkit-selection{ background-color: #E13300; color: white; }
+
+		body {
+			background-color: #fff;
+			margin: 40px;
+			font: 13px/20px normal Helvetica, Arial, sans-serif;
+			color: #4F5155;
+		}
+
+		a {
+			color: #003399;
+			background-color: transparent;
+			font-weight: normal;
+		}
+
+		h1 {
+			color: #444;
+			background-color: transparent;
+			border-bottom: 1px solid #D0D0D0;
+			font-size: 19px;
+			font-weight: normal;
+			margin: 0 0 14px 0;
+			padding: 14px 15px 10px 15px;
+		}
+
+		code {
+			font-family: Consolas, Monaco, Courier New, Courier, monospace;
+			font-size: 12px;
+			background-color: #f9f9f9;
+			border: 1px solid #D0D0D0;
+			color: #002166;
+			display: block;
+			margin: 14px 0 14px 0;
+			padding: 12px 10px 12px 10px;
+		}
+
+		#body{
+			margin: 0 15px 0 15px;
+		}
+
+		p.footer{
+			text-align: right;
+			font-size: 11px;
+			border-top: 1px solid #D0D0D0;
+			line-height: 32px;
+			padding: 0 10px 0 10px;
+			margin: 20px 0 0 0;
+		}
+
+		#container{
+			margin: 10px;
+			border: 1px solid #D0D0D0;
+			-webkit-box-shadow: 0 0 8px #D0D0D0;
+		}
+	body
+	  { 
+	  /*
+	  background:#fff url(/seo/templates/xz.jpg) no-repeat fixed right;
+	  */
+	  }
+	</style>
+	</head>
+<body>
+<div id="container">
+上层节点：<a href=http://www.holdyourdream.com/seo/index.php/node/getNode/{$row['G_fatherID']} > 点击管理上层节点 </a></br>
+<hr/>
+
+页面:{$row['G_position']}</br>
+url:<a href={$row['G_URL']} target="_blank"  > {$row['G_URL']} </a></br>
+CI：
+<table >
+	<tr>
+		<th>关键词</th>
+		<th>ci</th>
+		<th>是否满足ci</th>
+		<th></th>
+	</tr>
+{foreach from=$cis item=ci}
+<tr>
+	<form action="http://www.holdyourdream.com/seo/index.php/node/editCI/" method="POST">
+	<th>
+		<input type="text" name="G_position" value={$ci['G_keyword']}> 
+		-<a href=http://www.baidu.com/s?wd={$ci['G_keyword']} target="_blank">搜索</a></th>
+		<th><input type="text"  name="G_ci" value={$ci['G_ci']} >  </th>
+		<input type="hidden" name="G_positionID" value={$ci['id']}>
+		<th><input type="text"  name="G_ciok" value={$ci['G_ciok']} > </th>
+		<th><input type="submit" name="submit" value="修改" /></th>
+	</form>
+</tr>
+{/foreach}
+</table>
+<form action="http://www.holdyourdream.com/seo/index.php/node/addCI/" method="POST">
+关键词：<br>
+<input type="text" name="G_position">
+ci：<input type="text"  name="G_ci" value=0> 
+<input type="hidden" name="G_positionID" value={$row['id']}>
+<input type="text"  name="G_ciok" value=0> 
+<input type="submit" name="submit" value="提交" />
+</form>
+<hr/>
+
+下层节点：
+<ul>{foreach from=$childrens item=children}
+	<li><a href=http://www.holdyourdream.com/seo/index.php/node/getNode/{$children['id']}  > {$children['G_position']} </a></li>
+	{/foreach}
+</ul>
+添加节点：
+<form action="http://www.holdyourdream.com/seo/index.php/node/addNode/" method="POST">
+名称：<input type="text" name="G_position">
+url：<input type="text" name="G_URL">
+<input type="hidden" name="G_fatherID" value={$row['id']}>
+<input type="submit" name="submit" value="提交" />
+</form>
+</div>
+</body>
+</html>

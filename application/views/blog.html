@@ -1,0 +1,116 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>博客管理</title>
+	<style type="text/css">
+
+		::selection{ background-color: #E13300; color: white; }
+		::moz-selection{ background-color: #E13300; color: white; }
+		::webkit-selection{ background-color: #E13300; color: white; }
+
+		body {
+			background-color: #fff;
+			margin: 40px;
+			font: 13px/20px normal Helvetica, Arial, sans-serif;
+			color: #4F5155;
+		}
+
+		a {
+			color: #003399;
+			background-color: transparent;
+			font-weight: normal;
+		}
+
+		h1 {
+			color: #444;
+			background-color: transparent;
+			border-bottom: 1px solid #D0D0D0;
+			font-size: 19px;
+			font-weight: normal;
+			margin: 0 0 14px 0;
+			padding: 14px 15px 10px 15px;
+		}
+
+		code {
+			font-family: Consolas, Monaco, Courier New, Courier, monospace;
+			font-size: 12px;
+			background-color: #f9f9f9;
+			border: 1px solid #D0D0D0;
+			color: #002166;
+			display: block;
+			margin: 14px 0 14px 0;
+			padding: 12px 10px 12px 10px;
+		}
+
+		#body{
+			margin: 0 15px 0 15px;
+		}
+
+		p.footer{
+			text-align: right;
+			font-size: 11px;
+			border-top: 1px solid #D0D0D0;
+			line-height: 32px;
+			padding: 0 10px 0 10px;
+			margin: 20px 0 0 0;
+		}
+
+		#container{
+			margin: 10px;
+			border: 1px solid #D0D0D0;
+			-webkit-box-shadow: 0 0 8px #D0D0D0;
+		}
+	body
+	  { 
+	  /*
+	  background:#fff url(/seo/templates/xz.jpg) no-repeat fixed right;
+	  */
+	  }
+	</style>
+</head>
+<body>
+<div id="container">
+
+
+<table >
+	<tr>
+		<th>博客地址</th>
+		<th>用户名</th>
+		<th>密码</th>
+		<th>识别码</th>
+		<th>链接到</th>
+		<th></th>
+		<th>修改</th>
+		<th>删除</th>
+	</tr>
+<{foreach from=$blogs item=blog}>
+<tr>
+	<form action="http://www.holdyourdream.com/seo/index.php/blog/edit/" method="POST">
+	<th>
+		<input type="text" name="Gblogurl" value=<{$blog['Gblogurl']}>> 
+		<a href=<{$blog['Gblogurl']}> target="_blank">go</a></th>
+		<th><input type="text"  name="Gusername" value=<{$blog['Gusername']}> >  </th>
+		<th><input type="text" name="Gpassword" value=<{$blog['Gpassword']}>></th>
+		<th><input type="text"  name="Gblogkey" value=<{$blog['Gblogkey']}> > </th>
+		<th><input type="text"  name="Glinkto" value=<{$blog['Glinkto']}> > </th>
+		<th><input type="hidden"  name="id" value=<{$blog['id']}> > </th>
+		<th><input type="submit" name="submit" value="修改" /></th>
+		<th><a href=http://www.holdyourdream.com/seo/index.php/blog/del/<{$blog['id']}> >删除</a></th>
+	</form>
+</tr>
+<{/foreach}>
+</table>
+<hr>
+
+<h2>添加博客</h2>
+<form action="http://www.holdyourdream.com/seo/index.php/blog/add/" method="POST">
+博客地址：<input type="text" name="Gblogurl">
+用户名：<input type="text" name="Gusername">
+密码：<input type="text" name="Gpassword">
+识别码：<input type="text" name="Gblogkey">
+链接到：<input type="text" name="Glinkto">
+<input type="submit" name="submit" value="提交" />
+</form>
+</div>
+</body>
+</html>

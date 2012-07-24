@@ -1,51 +1,51 @@
 <?php
 
 
-
+namespace models;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Ggci
  *
- * @ORM\Table(name="GGci")
- * @ORM\Entity
+ * @Table(name="GGci")
+ * @Entity
  */
 class Ggci
 {
     /**
      * @var integer $id
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string $gKeyword
      *
-     * @ORM\Column(name="G_keyword", type="string", length=50, nullable=true)
+     * @Column(name="G_keyword", type="string", length=50, nullable=true)
      */
     private $gKeyword;
 
     /**
      * @var text $gCi
      *
-     * @ORM\Column(name="G_ci", type="text", nullable=true)
+     * @Column(name="G_ci", type="text", nullable=true)
      */
     private $gCi;
 
     /**
      * @var string $gCiok
      *
-     * @ORM\Column(name="G_ciok", type="string", length=50, nullable=true)
+     * @Column(name="G_ciok", type="string", length=50, nullable=true)
      */
     private $gCiok;
 
     /**
      * @var integer $gPositionid
      *
-     * @ORM\Column(name="G_positionID", type="integer", nullable=true)
+     * @Column(name="G_positionID", type="integer", nullable=true)
      */
     private $gPositionid;
 

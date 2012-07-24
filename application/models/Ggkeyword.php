@@ -1,44 +1,44 @@
 <?php
 
-
+namespace models;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Ggkeyword
  *
- * @ORM\Table(name="GGkeyword")
- * @ORM\Entity
+ * @Table(name="GGkeyword")
+ * @Entity
  */
 class Ggkeyword
 {
     /**
      * @var integer $id
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string $gPosition
      *
-     * @ORM\Column(name="G_position", type="string", length=45, nullable=true)
+     * @Column(name="G_position", type="string", length=45, nullable=true)
      */
     private $gPosition;
 
     /**
      * @var string $gUrl
      *
-     * @ORM\Column(name="G_URL", type="string", length=45, nullable=true)
+     * @Column(name="G_URL", type="string", length=45, nullable=true)
      */
     private $gUrl;
 
     /**
      * @var integer $gFatherid
      *
-     * @ORM\Column(name="G_fatherID", type="integer", nullable=true)
+     * @Column(name="G_fatherID", type="integer", nullable=true)
      */
     private $gFatherid;
 

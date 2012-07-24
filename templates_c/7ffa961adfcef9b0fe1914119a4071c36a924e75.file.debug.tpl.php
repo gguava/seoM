@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-07-24 19:33:46
+<?php /* Smarty version Smarty-3.1.11, created on 2012-07-25 00:45:16
          compiled from "/Users/guavatan/Sites/seoM/application/libraries/smarty/debug.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1051010355500e881aaa1e10-50703101%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7ffa961adfcef9b0fe1914119a4071c36a924e75' => 
     array (
       0 => '/Users/guavatan/Sites/seoM/application/libraries/smarty/debug.tpl',
-      1 => 1343005203,
+      1 => 1343147820,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_500e881ab3c0f4_93690876',
   'variables' => 
   array (
     'template_name' => 0,
@@ -28,8 +30,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'debug_output' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_500e881ab3c0f4_93690876',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_500e881ab3c0f4_93690876')) {function content_500e881ab3c0f4_93690876($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_debug_print_var')) include '/Users/guavatan/Sites/seoM/application/libraries/smarty/plugins/modifier.debug_print_var.php';
 ?><?php $_smarty_tpl->_capture_stack[0][] = array('_smarty_debug', 'debug_output', null); ob_start(); ?>

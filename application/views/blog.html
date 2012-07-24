@@ -83,22 +83,22 @@
 		<th>修改</th>
 		<th>删除</th>
 	</tr>
-<{foreach from=$blogs item=blog}>
+{foreach from=$blogs item=blog}
 <tr>
 	<form action="http://www.holdyourdream.com/seo/index.php/blog/edit/" method="POST">
 	<th>
-		<input type="text" name="Gblogurl" value=<{$blog['Gblogurl']}>> 
-		<a href=<{$blog['Gblogurl']}> target="_blank">go</a></th>
-		<th><input type="text"  name="Gusername" value=<{$blog['Gusername']}> >  </th>
-		<th><input type="text" name="Gpassword" value=<{$blog['Gpassword']}>></th>
-		<th><input type="text"  name="Gblogkey" value=<{$blog['Gblogkey']}> > </th>
-		<th><input type="text"  name="Glinkto" value=<{$blog['Glinkto']}> > </th>
-		<th><input type="hidden"  name="id" value=<{$blog['id']}> > </th>
+		<input type="text" name="Gblogurl" value={$blog['Gblogurl']}> 
+		<a href={$blog['Gblogurl']} target="_blank">go</a></th>
+		<th><input type="text"  name="Gusername" value={$blog['Gusername']} >  </th>
+		<th><input type="text" name="Gpassword" value={$blog['Gpassword']}></th>
+		<th><input type="text"  name="Gblogkey" value={$blog['Gblogkey']} > </th>
+		<th><input type="text"  name="Glinkto" value={$blog['Glinkto']} > </th>
+		<th><input type="hidden"  name="id" value={$blog['id']} > </th>
 		<th><input type="submit" name="submit" value="修改" /></th>
-		<th><a href=http://www.holdyourdream.com/seo/index.php/blog/del/<{$blog['id']}> >删除</a></th>
+		<th><a href=http://www.holdyourdream.com/seo/index.php/blog/del/{$blog['id']} >删除</a></th>
 	</form>
 </tr>
-<{/foreach}>
+{/foreach}
 </table>
 <hr>
 

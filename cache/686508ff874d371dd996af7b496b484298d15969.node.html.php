@@ -5,17 +5,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '686508ff874d371dd996af7b496b484298d15969' => 
     array (
       0 => './application/views/node.html',
-      1 => 1343128252,
+      1 => 1343147820,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '2054566845500e881aa080a7-43671457',
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_500e88b97c8d93_55699716',
+  'unifunc' => 'content_500ed122348912_83437970',
   'has_nocache_code' => false,
   'cache_lifetime' => 0,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_500e88b97c8d93_55699716')) {function content_500e88b97c8d93_55699716($_smarty_tpl) {?><html>
+<?php if ($_valid && !is_callable('content_500ed122348912_83437970')) {function content_500ed122348912_83437970($_smarty_tpl) {?><html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>node管理</title>
@@ -108,6 +108,17 @@ CI：
 		<th><input type="text"  name="G_ci" value=图片、知道、信息、商城、文章 >  </th>
 		<input type="hidden" name="G_positionID" value=29>
 		<th><input type="text"  name="G_ciok" value=60% > </th>
+		<th><input type="submit" name="submit" value="修改" /></th>
+	</form>
+</tr>
+<tr>
+	<form action="./../editCI/" method="POST">
+	<th>
+		<input type="text" name="G_position" value=珍珠手链价格> 
+		-<a href=http://www.baidu.com/s?wd=珍珠手链价格 target="_blank">搜索</a></th>
+		<th><input type="text"  name="G_ci" value=0 >  </th>
+		<input type="hidden" name="G_positionID" value=38>
+		<th><input type="text"  name="G_ciok" value=90% > </th>
 		<th><input type="submit" name="submit" value="修改" /></th>
 	</form>
 </tr>

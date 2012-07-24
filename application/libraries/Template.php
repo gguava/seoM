@@ -64,7 +64,8 @@ class Template extends Smarty {
     			}    		    		    		    		
     		} else {
     			if( empty($value) ) {
-    				throw new Exception("Value must be set when key is a string!");    			
+    				$this->tpl->assign($key,"");
+    				//throw new Exception("Value must be set when key is a string!");    			
     			}
 			    
 			$this->tpl->assign($key,$value);    		    		    		    		

@@ -19,6 +19,7 @@ class Node extends CI_Controller {
 		$row['G_fatherID']=$theNode->getGFatherid();
 		$row['G_URL']=$theNode->getGUrl();
 		$row['id']=$theNode->getId();
+		//echo $theNode->getId();
 		$row['G_position']=$theNode->getGPosition();
 
 
@@ -41,7 +42,7 @@ class Node extends CI_Controller {
 		$t->assign("childrens", $childrens);
 		
 		
-				$cis=array();
+		$cis=array();
 		$theCis=$this->em->getRepository('models\Ggci')->findBy(array('gPositionid'=>$nodeid));
 		//print_r($theCis);
 		
@@ -63,34 +64,62 @@ class Node extends CI_Controller {
 		$t->display("node"); //编译并显示位于./templates下的index.htm模板
 	}
 	public function addNode(){
-		print_r($_POST);
-		$sql="INSERT INTO `GGkeyword` VALUES (null, '".$_POST['G_position']."', '".$_POST['G_URL']."', '".$_POST['G_fatherID']."')";
-		$con=GGmysqlopen();
-		$result = mysql_query($sql)
-		    or die("Invalid query: " . mysql_error());
-		GGmysqlclose($con);
-		$url= $_SERVER['HTTP_REFERER'];
-		if($result != false){echo "your oder is done,<a href=".$url.">go back</a>";}
+		$this->load->library('doctrine');		
+		$this->em = $this->doctrine->em;
 		
-	}
-	public function addCI(){
-		//insert into `gdcxkjco_seo`.`` ( `G_keyword`, `G_ci`, `G_positionID`) values ( '珍珠首饰', '报价、批发、珍珠首饰保养', '1')
-		$sql="insert into `gdcxkjco_seo`.`GGci` ( `G_keyword`, `G_ci`, `G_positionID`, `G_ciok`) values ( '".$_POST['G_position']."', '".$_POST['G_ci']."', '".$_POST['G_positionID']."', '".$_POST['G_ciok']."')";
-		$con=GGmysqlopen();
-		$result = mysql_query($sql)
-		    or die("Invalid query: " . mysql_error());
-		GGmysqlclose($con);
+		$theNode = new models\Ggkeyword;
+		$theNode->setGPosition($_POST['G_position']);
+		$theNode->setGUrl($_POST['G_URL']);
+		$theNode->setGFatherid($_POST['G_fatherID']);
+		
+		$this->em->persist($user);
+		$this->em->flush();
+
 		$url= $_SERVER['HTTP_REFERER'];
-		if($result != false){echo "your oder is done,<a href=".$url.">go back</a>";}
+		if($result != false)echo '<script language="javascript" type="text/javascript">
+		window.location.href="'.$url.'"; 
+		</script>';
+		}
+	public function addCI(){
+		$this->load->library('doctrine');
+		$this->em = $this->doctrine->em;
+		
+		$theCi = new models\Ggci;
+		$theCi->setGKeyword($_POST['G_position']);
+		$theCi->setGCiok($_POST['G_ciok']);
+		$theCi->setGCi($_POST['G_ci']);
+		$theCi->setGPositionid($_POST['G_positionID']);
+		$this->em->persist($theCi);
+		$this->em->flush();
+		$url= $_SERVER['HTTP_REFERER'];
+		echo '<script language="javascript" type="text/javascript">
+		window.location.href="'.$url.'"; 
+		</script>';
 	}
 	public function editCI(){
+// 		$sql="update `gdcxkjco_seo`.`GGci` set `G_keyword`='".$_POST['G_position']."', `G_ci`='".$_POST['G_ci']."', `G_ciok`='".$_POST['G_ciok']."' where `id`='".$_POST['G_positionID']."'";
+// 		$con=GGmysqlopen();
+// 		$result = mysql_query($sql)
+// 		    or die("Invalid query: " . mysql_error());
+// 		GGmysqlclose($con);
+		$this->load->library('doctrine');
+		$this->em = $this->doctrine->em;
+
+		$theCi = new models\Ggci;
+		echo $_POST['G_positionID'];
+		$theCis=$this->em->getRepository('models\Ggci')->findBy(array('id'=>$_POST['G_positionID']));
+		$theCi=$theCis[0];
+		$theCi->setGCiok($_POST['G_ciok']);
+		$theCi->setGCi($_POST['G_ci']);
+		$theCi->setGPositionid($_POST['G_positionID']);
+		$this->em->persist($theCi);
+		$this->em->flush();
+		
 		$url= $_SERVER['HTTP_REFERER'];
-		$sql="update `gdcxkjco_seo`.`GGci` set `G_keyword`='".$_POST['G_position']."', `G_ci`='".$_POST['G_ci']."', `G_ciok`='".$_POST['G_ciok']."' where `id`='".$_POST['G_positionID']."'";
-		$con=GGmysqlopen();
-		$result = mysql_query($sql)
-		    or die("Invalid query: " . mysql_error());
-		GGmysqlclose($con);
-		if($result != false){echo "your oder is done,<a href=".$url.">go back</a>";}
+		echo '<script language="javascript" type="text/javascript">
+		window.location.href="'.$url.'"; 
+		</script>';
+
 		
 	}
 	//update `gdcxkjco_seo`.`GGci` set `G_ci`='2' where `id`='3' 

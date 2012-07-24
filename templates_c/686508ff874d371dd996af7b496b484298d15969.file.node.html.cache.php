@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.11, created on 2012-07-24 15:59:17
+<?php /* Smarty version Smarty-3.1.11, created on 2012-07-24 19:33:46
          compiled from "./application/views/node.html" */ ?>
-<?php /*%%SmartyHeaderCode:1169883208500e4dca505583-85777468%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2054566845500e881aa080a7-43671457%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '686508ff874d371dd996af7b496b484298d15969' => 
     array (
       0 => './application/views/node.html',
-      1 => 1343116547,
+      1 => 1343128252,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1169883208500e4dca505583-85777468',
+  'nocache_hash' => '2054566845500e881aa080a7-43671457',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_500e4dca5b7240_40786498',
   'variables' => 
   array (
     'title' => 0,
@@ -27,8 +25,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'children' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_500e881aa97f64_74408174',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_500e4dca5b7240_40786498')) {function content_500e4dca5b7240_40786498($_smarty_tpl) {?><html>
+<?php if ($_valid && !is_callable('content_500e881aa97f64_74408174')) {function content_500e881aa97f64_74408174($_smarty_tpl) {?><html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
@@ -124,7 +124,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['ci']->key => $_smarty_tpl->tpl_vars['
 $_smarty_tpl->tpl_vars['ci']->_loop = true;
 ?>
 <tr>
-	<form action="http://www.holdyourdream.com/seo/index.php/node/editCI/" method="POST">
+	<form action="./../editCI/" method="POST">
 	<th>
 		<input type="text" name="G_position" value=<?php echo $_smarty_tpl->tpl_vars['ci']->value['G_keyword'];?>
 > 
@@ -141,7 +141,7 @@ $_smarty_tpl->tpl_vars['ci']->_loop = true;
 </tr>
 <?php } ?>
 </table>
-<form action="http://www.holdyourdream.com/seo/index.php/node/addCI/" method="POST">
+<form action="./../addCI/" method="POST">
 关键词：<br>
 <input type="text" name="G_position">
 ci：<input type="text"  name="G_ci" value=0> 
@@ -158,7 +158,7 @@ ci：<input type="text"  name="G_ci" value=0>
 foreach ($_from as $_smarty_tpl->tpl_vars['children']->key => $_smarty_tpl->tpl_vars['children']->value){
 $_smarty_tpl->tpl_vars['children']->_loop = true;
 ?>
-	<li><a href=http://www.holdyourdream.com/seo/index.php/node/getNode/<?php echo $_smarty_tpl->tpl_vars['children']->value['id'];?>
+	<li><a href=./<?php echo $_smarty_tpl->tpl_vars['children']->value['id'];?>
   > <?php echo $_smarty_tpl->tpl_vars['children']->value['G_position'];?>
  </a></li>
 	<?php } ?>
@@ -167,8 +167,8 @@ $_smarty_tpl->tpl_vars['children']->_loop = true;
 <form action="http://www.holdyourdream.com/seo/index.php/node/addNode/" method="POST">
 名称：<input type="text" name="G_position">
 url：<input type="text" name="G_URL">
-<input type="hidden" name="G_fatherID" value=<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
->
+<input type="hidden" name="G_fatherID" value="<?php echo $_smarty_tpl->tpl_vars['row']->value['id'];?>
+" >
 <input type="submit" name="submit" value="提交" />
 </form>
 </div>

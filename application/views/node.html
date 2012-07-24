@@ -85,7 +85,7 @@ CI：
 	</tr>
 {foreach from=$cis item=ci}
 <tr>
-	<form action="http://www.holdyourdream.com/seo/index.php/node/editCI/" method="POST">
+	<form action="./../editCI/" method="POST">
 	<th>
 		<input type="text" name="G_position" value={$ci['G_keyword']}> 
 		-<a href=http://www.baidu.com/s?wd={$ci['G_keyword']} target="_blank">搜索</a></th>
@@ -97,7 +97,7 @@ CI：
 </tr>
 {/foreach}
 </table>
-<form action="http://www.holdyourdream.com/seo/index.php/node/addCI/" method="POST">
+<form action="./../addCI/" method="POST">
 关键词：<br>
 <input type="text" name="G_position">
 ci：<input type="text"  name="G_ci" value=0> 
@@ -109,14 +109,14 @@ ci：<input type="text"  name="G_ci" value=0>
 
 下层节点：
 <ul>{foreach from=$childrens item=children}
-	<li><a href=http://www.holdyourdream.com/seo/index.php/node/getNode/{$children['id']}  > {$children['G_position']} </a></li>
+	<li><a href=./{$children['id']}  > {$children['G_position']} </a></li>
 	{/foreach}
 </ul>
 添加节点：
 <form action="http://www.holdyourdream.com/seo/index.php/node/addNode/" method="POST">
 名称：<input type="text" name="G_position">
 url：<input type="text" name="G_URL">
-<input type="hidden" name="G_fatherID" value={$row['id']}>
+<input type="hidden" name="G_fatherID" value="{$row['id']}" >
 <input type="submit" name="submit" value="提交" />
 </form>
 </div>

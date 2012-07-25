@@ -37,8 +37,9 @@ class Template extends Smarty {
 		$smarty->cache_lifetime = 0; //缓存时间 
 		$smarty->caching = true; //缓存方式  
 		$smarty->template_dir="./application/views/";
-		$smarty->left_delimiter = "{"; 
-		$smarty->right_delimiter = "}";
+		$smarty->left_delimiter = "<!--{"; 
+		$smarty->right_delimiter = "}-->";
+		$smarty->debugging = false;
 		$this->tpl=$smarty;
 /*
         $this->tpl->template_dir = "./application/views/";

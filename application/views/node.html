@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>{$title}</title>
+	<title><!--{$title}--></title>
 	<style type="text/css">
 
 		::selection{ background-color: #E13300; color: white; }
@@ -56,6 +56,7 @@
 		}
 
 		#container{
+		padding-left: 10px;
 			margin: 10px;
 			border: 1px solid #D0D0D0;
 			-webkit-box-shadow: 0 0 8px #D0D0D0;
@@ -67,14 +68,20 @@
 	  */
 	  }
 	</style>
+	
 	</head>
 <body>
 <div id="container">
-上层节点：<a href=http://www.holdyourdream.com/seo/index.php/node/getNode/{$row['G_fatherID']} > 点击管理上层节点 </a></br>
+<!--{if $row['G_fatherID'] eq "0"}-->
+没有上层节点<!--{$row['G_fatherID']}-->
+<!--{else}-->
+上层节点ID<!--{$row['G_fatherID']}-->：<a href=./<!--{$row['G_fatherID']}--> > 
+点击管理上层节点go </a></br>
+<!--{/if}-->
 <hr/>
 
-页面:{$row['G_position']}</br>
-url:<a href={$row['G_URL']} target="_blank"  > {$row['G_URL']} </a></br>
+页面:<!--{$row['G_position']}--></br>
+url:<a href=<!--{$row['G_URL']}--> target="_blank"  > <!--{$row['G_URL']}--> </a></br>
 CI：
 <table >
 	<tr>
@@ -83,42 +90,47 @@ CI：
 		<th>是否满足ci</th>
 		<th></th>
 	</tr>
-{foreach from=$cis item=ci}
+<!--{foreach from=$cis item=ci}-->
 <tr>
 	<form action="./../editCI/" method="POST">
 	<th>
-		<input type="text" name="G_position" value={$ci['G_keyword']}> 
-		-<a href=http://www.baidu.com/s?wd={$ci['G_keyword']} target="_blank">搜索</a></th>
-		<th><input type="text"  name="G_ci" value={$ci['G_ci']} >  </th>
-		<input type="hidden" name="G_positionID" value={$ci['id']}>
-		<th><input type="text"  name="G_ciok" value={$ci['G_ciok']} > </th>
+		<input type="text" name="G_position" value=<!--{$ci['G_keyword']}--> > 
+		-<a href=http://www.baidu.com/s?wd=<!--{$ci['G_keyword']}--> target="_blank">搜索</a>
+		<a href=http://keyword.biniu.com/?q=haixingzb.com&key=<!--{$ci['G_keyword_urlencode']}--> target="_blank">排名</a>
+		<a href=http://www.baidu.com/s?wd=<!--{$ci['G_keyword_urlencode_nogbk']}-->+site%3Ahaixingzb.com target="_blank">target</a>
+		</th>
+		<th><input type="text"  name="G_ci" value=<!--{$ci['G_ci']}--> >  </th>
+		<input type="hidden" name="G_positionID" value=<!--{$ci['GPositionid']}-->>
+		<input type="hidden" name="id" value=<!--{$ci['id']}-->>
+		<th><input type="text"  name="G_ciok" value=<!--{$ci['G_ciok']}--> > </th>
 		<th><input type="submit" name="submit" value="修改" /></th>
 	</form>
 </tr>
-{/foreach}
+<!--{/foreach}-->
 </table>
 <form action="./../addCI/" method="POST">
 关键词：<br>
 <input type="text" name="G_position">
 ci：<input type="text"  name="G_ci" value=0> 
-<input type="hidden" name="G_positionID" value={$row['id']}>
+<input type="hidden" name="G_positionID" value=<!--{$row['id']}-->>
 <input type="text"  name="G_ciok" value=0> 
 <input type="submit" name="submit" value="提交" />
 </form>
 <hr/>
 
 下层节点：
-<ul>{foreach from=$childrens item=children}
-	<li><a href=./{$children['id']}  > {$children['G_position']} </a></li>
-	{/foreach}
+<ul><!--{foreach from=$childrens item=children}-->
+	<li><a href=./<!--{$children['id']}-->  > <!--{$children['G_position']}--> </a></li>
+	<!--{/foreach}-->
 </ul>
 添加节点：
-<form action="http://www.holdyourdream.com/seo/index.php/node/addNode/" method="POST">
+<form action="./../addNode/" method="POST">
 名称：<input type="text" name="G_position">
 url：<input type="text" name="G_URL">
-<input type="hidden" name="G_fatherID" value="{$row['id']}" >
+<input type="hidden" name="G_fatherID" value="<!--{$row['id']}-->" >
 <input type="submit" name="submit" value="提交" />
 </form>
 </div>
 </body>
+
 </html>

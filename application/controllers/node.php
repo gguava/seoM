@@ -19,10 +19,11 @@ class Node extends CI_Controller {
 		$row['G_fatherID']=$theNode->getGFatherid();
 		$row['G_URL']=$theNode->getGUrl();
 		$row['id']=$theNode->getId();
+		//echo $row['id'];
 		//echo $theNode->getId();
 		$row['G_position']=$theNode->getGPosition();
 
-
+		//print_r($row);
 		$t->assign("row",$row); 
 				$childrens=array();
 		$thechildrens=$this->em->getRepository('models\Ggkeyword')->findBy(array('gFatherid'=>$nodeid));
@@ -52,6 +53,10 @@ class Node extends CI_Controller {
 			$ci['G_ci']=$theCi->getGCi();
 			$ci['id']=$theCi->getId();
 			$ci['G_ciok']=$theCi->getGCiok();
+			$ci['GPositionid']=$theCi->getGPositionid();
+			$ci['G_keyword_urlencode']=urlencode(mb_convert_encoding($theCi->getGKeyword(), 'gbk','utf-8'));
+			$ci['G_keyword_urlencode_nogbk']=urlencode( $theCi->getGKeyword() );
+			
 			//print_r($ci);
 			array_push($cis,$ci);
 			//$cis[$cis_num]['G_keyword']=$theCi->getGKeyword();
@@ -72,11 +77,11 @@ class Node extends CI_Controller {
 		$theNode->setGUrl($_POST['G_URL']);
 		$theNode->setGFatherid($_POST['G_fatherID']);
 		
-		$this->em->persist($user);
+		$this->em->persist($theNode);
 		$this->em->flush();
 
 		$url= $_SERVER['HTTP_REFERER'];
-		if($result != false)echo '<script language="javascript" type="text/javascript">
+		echo '<script language="javascript" type="text/javascript">
 		window.location.href="'.$url.'"; 
 		</script>';
 		}
@@ -106,8 +111,8 @@ class Node extends CI_Controller {
 		$this->em = $this->doctrine->em;
 
 		$theCi = new models\Ggci;
-		echo $_POST['G_positionID'];
-		$theCis=$this->em->getRepository('models\Ggci')->findBy(array('id'=>$_POST['G_positionID']));
+		//echo $_POST['G_positionID'];
+		$theCis=$this->em->getRepository('models\Ggci')->findBy(array('id'=>$_POST['id']));
 		$theCi=$theCis[0];
 		$theCi->setGCiok($_POST['G_ciok']);
 		$theCi->setGCi($_POST['G_ci']);

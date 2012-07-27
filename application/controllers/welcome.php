@@ -19,20 +19,24 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->library('doctrine');
 		$this->load->library('template');
-		$user = new models\Gguser;
-		$user->setUsername('ss2ss');
-		$user->setPassword('ss2ss');
-		$user->setEmail('ss2sss@gmail.com');
-		
-		$this->em = $this->doctrine->em;
-		$this->em->persist($user);
-		$this->em->flush();
-		
 		$t=new Template();
 		$t->assign('title','funny?');
 		$t->display('welcome');
+// 		$this->load->library('doctrine');
+// 		$this->load->library('template');
+// 		$user = new models\Gguser;
+// 		$user->setUsername('ss2ss');
+// 		$user->setPassword('ss2ss');
+// 		$user->setEmail('ss2sss@gmail.com');
+		
+// 		$this->em = $this->doctrine->em;
+// 		$this->em->persist($user);
+// 		$this->em->flush();
+		
+// 		$t=new Template();
+// 		$t->assign('title','funny?');
+// 		$t->display('welcome');
 		//$this->load->view('welcome_message', array('user' => $user));	
 	}
 }

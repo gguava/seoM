@@ -1,0 +1,24 @@
+Ggformtemplate:
+  type: entity
+  table: GGFormTemplate
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    ggfieldname:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: GGfieldName
+    ggactionto:
+      type: string
+      length: 50
+      fixed: true
+      nullable: true
+      column: GGactionTo
+  lifecycleCallbacks: {  }

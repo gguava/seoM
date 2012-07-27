@@ -4,22 +4,23 @@ class Blog extends CI_Controller {
 	
 	public function index()
 	{
-		//get smarty
-		$gets=new s1();
-		$s1=$gets->setS();
+		echo 's';
+// 		//get smarty
+// 		$gets=new s1();
+// 		$s1=$gets->setS();
 		
-		//get all childrens
-		$blogs=array();
-		$con=GGmysqlopen();
-		$result1 = mysql_query("select * from `GGblog`");
+// 		//get all childrens
+// 		$blogs=array();
+// 		$con=GGmysqlopen();
+// 		$result1 = mysql_query("select * from `GGblog`");
 		
-		while($blog = mysql_fetch_array($result1)){
-			array_push($blogs,$blog);			
-		}
-		$s1->assign("blogs", $blogs);
+// 		while($blog = mysql_fetch_array($result1)){
+// 			array_push($blogs,$blog);			
+// 		}
+// 		$s1->assign("blogs", $blogs);
 		
 		
-		$s1->display("blog.html");
+// 		$s1->display("blog.html");
 	}
 	public function add(){
 		//print_r($_POST);

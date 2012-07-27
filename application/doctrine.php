@@ -14,7 +14,7 @@ $classLoader->register();
 $classLoader = new \Doctrine\Common\ClassLoader('Symfony', 'libraries/Doctrine');
 $classLoader->register();
 
-$configFile = getcwd() . '/libraries/Doctrine.php';
+$configFile = getcwd() . '/libraries/Doctrine2.php';
 $helperSet = null;
 if (file_exists($configFile)) {
     if ( ! is_readable($configFile)) {

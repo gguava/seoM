@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>{$title}</title>
+	<title>Welcome to CodeIgniter</title>
 
 	<style type="text/css">
 
@@ -33,7 +33,7 @@
 		padding: 14px 15px 10px 15px;
 	}
 
-	code, pre {
+	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
 		background-color: #f9f9f9;
@@ -43,14 +43,6 @@
 		margin: 14px 0 14px 0;
 		padding: 12px 10px 12px 10px;
 	}
-
-    code.inline {
-        font-family: monospace;
-        margin: 0;
-        padding: 12px 4px 12px 4px;
-        display: inline;
-        border: none;
-    }
 
 	#body{
 		margin: 0 15px 0 15px;
@@ -74,38 +66,19 @@
 </head>
 <body>
 
-<h1>Welcome to CodeIgniter with Doctrine!</h1>
+<div id="container">
+	<h1>Welcome to 
+		HYD SEO system!</h1>
 
-<p>This install of CodeIgniter with Doctrine 2 has been created and configured by Joseph Wynn from <a href="http://wildlyinaccurate.com/">Wildly Inaccurate</a>.</p>
+	<div id="body">
+		<p>点击以链接进入各个模块：</p>
 
-<p>You can access the Doctrine EntityManager in your controllers through the Doctrine library:</p>
-<code>$this->load->library('doctrine');<br />
-$em = $this->doctrine->em;</code>
+		<code><a href=index.php/node/getNode/1>关键词管理</a> <a href=blog/>博客管理</a></code>
 
-<p>Or through the shortcut property in MY_Controller:</p>
-<code>$this->em;</code>
+	</div>
 
-<p>A sample model has been created for you in:</p>
-<code>application/models/User.php</code>
-
-<p>The following code was used in the Welcome controller to create a new User entity.</p>
-<code>$user = new models\User;<br />
-$user->setUsername('josephwynn');<br />
-$user->setPassword('Passw0rd');<br />
-$user->setEmail('wildlyinaccurate@gmail.com');</code>
-
-<p>Below is the output of print_r($user):</p>
-
-<p>The Doctrine console is ready for you to use. Just run <code class="inline"># ./application/doctrine</code> on Linux & Mac, or <code class="inline"># php.exe ./application/doctrine.php</code> on Windows.</p>
-
-<p>For more information about integrating Doctrine with CodeIgniter, read <em><a href="http://wildlyinaccurate.com/integrating-doctrine-2-with-codeigniter-2/">Integrating Doctrine 2 with CodeIgniter 2</a></em>.</p>
-
-<h2>Version Information</h2>
-<pre>CodeIgniter 
-
-Doctrine</pre>
-
-<p><br />Page rendered in  seconds</p>
+	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+</div>
 
 </body>
 </html>

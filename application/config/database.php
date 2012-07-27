@@ -49,6 +49,7 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'box797.bluehost.com';
+//$db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'gdcxkjco_seo';
 $db['default']['password'] = 'guavaguava00';
 $db['default']['database'] = 'gdcxkjco_seo';

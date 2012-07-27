@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+<?php /* Smarty version Smarty-3.1.11, created on 2012-07-26 11:46:33
+         compiled from "./application/views/welcome.html" */ ?>
+<?php /*%%SmartyHeaderCode:2475348135010bd785bb337-08950800%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '5dac977c103acdb6a594dfd3ff659134a61c38f9' => 
+    array (
+      0 => './application/views/welcome.html',
+      1 => 1343274390,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2475348135010bd785bb337-08950800',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.11',
+  'unifunc' => 'content_5010bd785ec959_61531409',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5010bd785ec959_61531409')) {function content_5010bd785ec959_61531409($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -73,7 +94,7 @@
 	<div id="body">
 		<p>点击以链接进入各个模块：</p>
 
-		<code><a href=node/getNode/1>关键词管理</a> <a href=blog/>博客管理</a></code>
+		<code><a href=index.php/node/getNode/1>关键词管理</a> <a href=blog/>博客管理</a></code>
 
 	</div>
 
@@ -81,4 +102,4 @@
 </div>
 
 </body>
-</html>
+</html><?php }} ?>

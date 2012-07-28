@@ -1,6 +1,6 @@
-Ggformtemplate:
+Ggformfield:
   type: entity
-  table: GGFormTemplate
+  table: GGFormField
   fields:
     id:
       id: true
@@ -9,22 +9,27 @@ Ggformtemplate:
       nullable: false
       generator:
         strategy: IDENTITY
+    ggformtemplateid:
+      type: integer
+      unsigned: false
+      nullable: false
+      column: GGformTemplateID
     ggfieldname:
       type: string
       length: 50
       fixed: true
-      nullable: true
+      nullable: false
       column: GGfieldName
-    gglable:
+    gglabel:
       type: string
       length: 50
       fixed: true
-      nullable: true
-      column: GGlable
-    ggactionto:
+      nullable: false
+      column: GGlabel
+    gginputtype:
       type: string
       length: 50
       fixed: true
-      nullable: true
-      column: GGactionTo
+      nullable: false
+      column: GGinputType
   lifecycleCallbacks: {  }

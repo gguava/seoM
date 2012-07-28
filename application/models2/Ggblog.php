@@ -1,58 +1,58 @@
 <?php
 
 
-namespace models;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Ggblog
  *
- * @Table(name="GGblog")
- * @Entity
+ * @ORM\Table(name="GGblog")
+ * @ORM\Entity
  */
 class Ggblog
 {
     /**
      * @var integer $id
      *
-     * @Column(name="id", type="integer", nullable=false)
-     * @Id
-     * @GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string $gblogurl
      *
-     * @Column(name="Gblogurl", type="string", length=50, nullable=true)
+     * @ORM\Column(name="Gblogurl", type="string", length=50, nullable=true)
      */
     private $gblogurl;
 
     /**
      * @var string $gusername
      *
-     * @Column(name="Gusername", type="string", length=50, nullable=true)
+     * @ORM\Column(name="Gusername", type="string", length=50, nullable=true)
      */
     private $gusername;
 
     /**
      * @var string $gpassword
      *
-     * @Column(name="Gpassword", type="string", length=50, nullable=true)
+     * @ORM\Column(name="Gpassword", type="string", length=50, nullable=true)
      */
     private $gpassword;
 
     /**
      * @var string $gblogkey
      *
-     * @Column(name="Gblogkey", type="string", length=50, nullable=true)
+     * @ORM\Column(name="Gblogkey", type="string", length=50, nullable=true)
      */
     private $gblogkey;
 
     /**
      * @var string $glinkto
      *
-     * @Column(name="Glinkto", type="string", length=50, nullable=true)
+     * @ORM\Column(name="Glinkto", type="string", length=50, nullable=true)
      */
     private $glinkto;
 

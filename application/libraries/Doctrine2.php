@@ -1,4 +1,5 @@
 <?php
+//为了构建命令行工具
 use Doctrine\ORM\EntityManager,
 	Doctrine\ORM\Configuration;
 use Doctrine\ORM\Mapping\Driver\YamlDriver;

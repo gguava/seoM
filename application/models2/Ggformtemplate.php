@@ -1,37 +1,44 @@
 <?php
 
 
-namespace models;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Ggformtemplate
  *
- * @Table(name="GGFormTemplate")
- * @Entity
+ * @ORM\Table(name="GGFormTemplate")
+ * @ORM\Entity
  */
 class Ggformtemplate
 {
     /**
      * @var integer $id
      *
-     * @Column(name="id", type="integer", nullable=false)
-     * @Id
-     * @GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string $ggfieldname
      *
-     * @Column(name="GGfieldName", type="string", length=50, nullable=true)
+     * @ORM\Column(name="GGfieldName", type="string", length=50, nullable=true)
      */
     private $ggfieldname;
 
     /**
+     * @var string $gglable
+     *
+     * @ORM\Column(name="GGlable", type="string", length=50, nullable=true)
+     */
+    private $gglable;
+
+    /**
      * @var string $ggactionto
      *
-     * @Column(name="GGactionTo", type="string", length=50, nullable=true)
+     * @ORM\Column(name="GGactionTo", type="string", length=50, nullable=true)
      */
     private $ggactionto;
 
@@ -66,6 +73,28 @@ class Ggformtemplate
     public function getGgfieldname()
     {
         return $this->ggfieldname;
+    }
+
+    /**
+     * Set gglable
+     *
+     * @param string $gglable
+     * @return Ggformtemplate
+     */
+    public function setGglable($gglable)
+    {
+        $this->gglable = $gglable;
+        return $this;
+    }
+
+    /**
+     * Get gglable
+     *
+     * @return string 
+     */
+    public function getGglable()
+    {
+        return $this->gglable;
     }
 
     /**

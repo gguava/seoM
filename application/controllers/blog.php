@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-include_once('set.php');
+
 class Blog extends CI_Controller {
 	
 	public function index()
@@ -22,17 +22,22 @@ class Blog extends CI_Controller {
 		
 // 		$s1->display("blog.html");
 	}
-	public function add(){
-		//print_r($_POST);
-		$sql="insert into `GGblog` ( `Gblogurl`, `Gpassword`, `Gusername`, `Gblogkey`, `Glinkto`) values ( '".$_POST['Gblogurl']."', '".$_POST['Gpassword']."', '".$_POST['Gusername']."', '".$_POST['Gblogkey']."', '".$_POST['Glinkto']."')";
-		$con=GGmysqlopen();
-		$result = mysql_query($sql)
-		    or die("Invalid query: " . mysql_error());
-		GGmysqlclose($con);
-		$url= $_SERVER['HTTP_REFERER'];
-		if($result != false){echo '<script language="javascript" type="text/javascript">
-		window.location.href="'.$url.'"; 
-		</script>';}		
+	public function add(){		
+		$this->load->library('doctrine');
+		$this->load->library('template');
+		$this->load->library('ccik');
+		$this->em = $this->doctrine->em;
+		$t=new Template();
+		$theBlog = new models\Ggblog;
+		$this->ccik->fillPost($theBlog);
+// 		foreach ($_POST as $key=>$value){
+// 			$method="set".$key;
+// 			//echo $method;
+// 			$theBlog->$method($value);
+// 			//$theBlog->setGblogurl($value);
+// 			print_r($theBlog);		
+// 			echo '<hr>';
+// 		}
 	}
 	
 	public function edit(){

@@ -11,11 +11,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'nocache_hash' => '902823073500fc9b1ae8203-49627349',
   'version' => 'Smarty-3.1.11',
-  'unifunc' => 'content_5010be10f404a8_20276227',
+  'unifunc' => 'content_501387482e5ea2_17077617',
   'has_nocache_code' => false,
   'cache_lifetime' => 0,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5010be10f404a8_20276227')) {function content_5010be10f404a8_20276227($_smarty_tpl) {?><html>
+<?php if ($_valid && !is_callable('content_501387482e5ea2_17077617')) {function content_501387482e5ea2_17077617($_smarty_tpl) {?><html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>node管理</title>

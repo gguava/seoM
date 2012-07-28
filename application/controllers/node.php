@@ -11,6 +11,8 @@ class Node extends CI_Controller {
 		$this->load->library('template');
 		
 		$this->em = $this->doctrine->em;
+		
+		
 		$t=new Template();
 		
 		//$theNode = new models\Ggkeyword;
